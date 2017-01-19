@@ -132,7 +132,7 @@ public class XboxController {
 	 * Reacquires the values for all inputs
 	 */
 	public void refresh() {
-		getDpad();
+		//getDpad();
 		getLeftStick();
 		getRightStick();
 		getTrigger();
