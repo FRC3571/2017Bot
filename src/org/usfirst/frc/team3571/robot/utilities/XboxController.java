@@ -132,7 +132,7 @@ public class XboxController {
 	 * Reacquires the values for all inputs
 	 */
 	public void refresh() {
-		//getDpad();
+		getDpad();
 		getLeftStick();
 		getRightStick();
 		getTrigger();
@@ -170,7 +170,7 @@ public class XboxController {
 	}
 
 	void getDpad() {
-		DPad.set(dStation.getStickPOV(port, 0));
+		DPad.set(dStation.getStickAxis(port, 6), dStation.getStickAxis(port, 7));
 	}
 
 	void getLeftStick() {
@@ -250,12 +250,31 @@ public class XboxController {
 		 **/
 		public int degrees = -1;
 
-		void set(int degree) {
-			Up = degree == 315 || degree == 0 || degree == 45;
-			Down = degree <= 225 && degree >= 135;
-			Left = degree <= 315 && degree >= 225;
-			Right = degree <= 135 && degree >= 45;
-			degrees = degree;
+//		void set(int degree) {
+//			Up = degree == 315 || degree == 0 || degree == 45;
+//			Down = degree <= 225 && degree >= 135;
+//			Left = degree <= 315 && degree >= 225;
+//			Right = degree <= 135 && degree >= 45;
+//			degrees = degree;
+//		}
+		void set(double x,double y){
+			Up = y>0.1;
+			Down = y<-0.1;
+			Left = x<0.1;
+			Right = x>-0.1;
+			if(Up){
+				if(Left)degrees=315;
+				else if(Right)degrees=45;
+				else degrees=0;
+			}
+			else if(Down){
+				if(Left)degrees=225;
+				else if(Right)degrees=135;
+				else degrees=180;
+			}
+			else if(Left)degrees=270;
+			else if(Right)degrees=90;
+			else degrees=-1;
 		}
 	}
 
