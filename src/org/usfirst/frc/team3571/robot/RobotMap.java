@@ -12,10 +12,10 @@ public class RobotMap {
 	 * This is everything that is connected to the PWM ports on the RoboRIO
 	 */
 	public static class PWM {
-		public static final int FRONT_LEFT_DRIVE_MOTOR = 2;
-		public static final int REAR_LEFT_DRIVE_MOTOR = 1;
-		public static final int FRONT_RIGHT_DRIVE_MOTOR = 3;
-		public static final int REAR_RIGHT_DRIVE_MOTOR = 0;
+		public static final int FRONT_LEFT_DRIVE_MOTOR = 1;
+		public static final int REAR_LEFT_DRIVE_MOTOR = 2;
+		public static final int FRONT_RIGHT_DRIVE_MOTOR = 0;
+		public static final int REAR_RIGHT_DRIVE_MOTOR = 3;
 		// 4-9 Free
 		// 0-9 Free
 	}
