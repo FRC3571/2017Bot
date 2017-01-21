@@ -18,6 +18,7 @@ public class RobotMap {
 		public static final int REAR_RIGHT_DRIVE_MOTOR = 3;
 		// 4-9 Free
 		// 0-9 Free
+		//Turn error
 	}
 
 	/**
