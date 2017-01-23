@@ -2,6 +2,8 @@ package org.usfirst.frc.team3571.robot;
 
 import org.usfirst.frc.team3571.robot.utilities.XboxController.Button;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class Teleop extends OI {
 
 	// Only a reference is being passed
@@ -30,7 +32,7 @@ public class Teleop extends OI {
 	 */
 	public static void periodic() {
 		volts = proximityAnalog.getVoltage();
-		
+		SmartDashboard.putNumber("Volltage", volts);
 		// TODO Make Teleop Code
 
 		// Flips the state of triggerDrive when Button B changes state to
