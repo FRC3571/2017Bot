@@ -20,7 +20,6 @@ public class Teleop extends OI {
 	
 	static double volts =0;
 	static double distance =0;
-
 	/**
 	 * The initialization code for Teleop
 	 */
