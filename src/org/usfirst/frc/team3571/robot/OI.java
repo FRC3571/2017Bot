@@ -25,4 +25,9 @@ public class OI extends RobotMap {
 		driver.refresh();
 		operator.refresh();
 	}
+	
+	/** Returns distance in mm **/
+	public static int getDistance(){
+		return (proximityAnalog.getValue()<<2) * 60;
+	}
 }

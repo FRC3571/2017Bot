@@ -19,6 +19,7 @@ public class Teleop extends OI {
 	static double driveY = 0;
 	
 	static double volts =0;
+	static double distance =0;
 
 	/**
 	 * The initialization code for Teleop
@@ -31,8 +32,10 @@ public class Teleop extends OI {
 	 * Runs at a maximum rate of 50Hz during Teleop
 	 */
 	public static void periodic() {
+		distance = getDistance();
 		volts = proximityAnalog.getVoltage();
 		SmartDashboard.putNumber("Volltage", volts);
+		SmartDashboard.putNumber("Distance in mm", distance);
 		// TODO Make Teleop Code
 
 		// Flips the state of triggerDrive when Button B changes state to
