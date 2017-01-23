@@ -27,7 +27,7 @@ public class OI extends RobotMap {
 	}
 	
 	/** Returns distance in mm **/
-	public static int getDistance(){
-		return (proximityAnalog.getValue()<<2) * 60;
+	public static double getDistance(){
+		return ((double)proximityAnalog.getValue() * 1.24941) + 299.891;
 	}
 }
