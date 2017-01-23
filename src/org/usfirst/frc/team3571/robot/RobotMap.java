@@ -54,7 +54,7 @@ public class RobotMap {
 		public static final double CONTROLLER_DEADZONE = 0.25;
 	}
 	public static class Analog{
-		//AnalogInput exampleAnalog = new AnalogInput(0);
+		public static final int EXAMPLE_ANALOG = 0;
 	}
 }
 
