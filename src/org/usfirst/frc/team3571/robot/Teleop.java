@@ -19,7 +19,8 @@ public class Teleop extends OI {
 	static double driveY = 0;
 	
 	static double volts =0;
-
+	static double volts2 = 0;
+	static double range = 0;
 	/**
 	 * The initialization code for Teleop
 	 */
@@ -32,7 +33,10 @@ public class Teleop extends OI {
 	 */
 	public static void periodic() {
 		volts = proximityAnalog.getVoltage();
-		SmartDashboard.putNumber("Volltage", volts);
+		volts2 = volts /512;
+		range = volts / volts2;
+		
+		SmartDashboard.putNumber("range", range);
 		// TODO Make Teleop Code
 
 		// Flips the state of triggerDrive when Button B changes state to
