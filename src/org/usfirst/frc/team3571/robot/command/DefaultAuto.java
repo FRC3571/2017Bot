@@ -1,6 +1,9 @@
 package org.usfirst.frc.team3571.robot.command;
 
+import org.usfirst.frc.team3571.robot.OI;
+
 import edu.wpi.first.wpilibj.command.Command;
+
 
 /**
  *
@@ -18,6 +21,8 @@ public class DefaultAuto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	OI.drive.arcadeDrive(0.1,0.1);  
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
