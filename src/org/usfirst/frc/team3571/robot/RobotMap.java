@@ -53,5 +53,8 @@ public class RobotMap {
 	public static class DEFAULT{
 		public static final double CONTROLLER_DEADZONE = 0.25;
 	}
-
+	public static class Analog{
+		//AnalogInput exampleAnalog = new AnalogInput(0);
+	}
 }
+

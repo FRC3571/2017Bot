@@ -15,7 +15,7 @@ public class OI extends RobotMap {
 
 	public static final RobotDrive drive = new RobotDrive(PWM.FRONT_LEFT_DRIVE_MOTOR, PWM.REAR_LEFT_DRIVE_MOTOR,
 			PWM.FRONT_RIGHT_DRIVE_MOTOR, PWM.REAR_RIGHT_DRIVE_MOTOR);
-
+	//double volts = ProximityAnalog.getVoltage();
 	/**
 	 * Calls All Refresh Methods
 	 */
