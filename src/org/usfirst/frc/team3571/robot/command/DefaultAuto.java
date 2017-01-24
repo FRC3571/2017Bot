@@ -1,7 +1,7 @@
 package org.usfirst.frc.team3571.robot.command;
 
 import org.usfirst.frc.team3571.robot.OI;
-
+import org.usfirst.frc.team3571.robot.Teleop;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -22,9 +22,15 @@ public class DefaultAuto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {        
-    	OI.drive.arcadeDrive(1,1);
-           
-    	
+    	//
+    
+    double distance = Teleop.getDistance();
+		double volts = Teleop.proximityAnalog.getVoltage();
+		if (distance >= 500 ){
+		
+		OI.drive.arcadeDrive(1,0);
+		}
+		
     }
 
     // Make this return true when this Command no longer needs to run execute()
