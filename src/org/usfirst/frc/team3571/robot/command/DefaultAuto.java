@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj.templates.Gyro;
  */
 public class DefaultAuto extends Command {
 
+	public double Kp = 0.003;
+	
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -20,7 +22,7 @@ public class DefaultAuto extends Command {
    
     // Called just before this Command runs the first time
     protected void initialize() {
-    	gyro.reset();
+    	OI.gyro.reset();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -28,7 +30,7 @@ public class DefaultAuto extends Command {
     	//OI.drive.arcadeDrive(-0.1,0.1);
     	//Timer.delay(2.0);
     	//OI.drive.arcadeDrive(0,0);
-    	double angle = gyro.getAngle(); // get current heading
+    	double angle = OI.gyro.getAngle(); // get current heading
         OI.drive.arcadeDrive(0, -angle*Kp); // drive towards heading 0
         Timer.delay(0.004);
     }
