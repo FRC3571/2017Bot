@@ -1,32 +1,44 @@
 package org.usfirst.frc.team3571.robot.command;
 
-import org.usfirst.frc.team3571.robot.OI;
 
+import org.usfirst.frc.team3571.robot.OI;
+import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 
 /**
  *
  */
 public class DefaultAuto extends Command {
+	
+	private Gyro gyro;
+	
+	double Kp = 0.03;
 
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
+    public void ShahmirGyro() {
+        gyro = new AnalogGyro(1);             // Gyro on Analog Channel 1
+    }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	gyro.reset();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {        
-    	OI.drive.arcadeDrive(-0.1,0.1);
-    	Timer.delay(2.0);
-    	OI.drive.arcadeDrive(0,0);
-        
-    	
+    	//OI.drive.arcadeDrive(-0.1,0.1);
+    	//Timer.delay(2.0);
+    	//OI.drive.arcadeDrive(0,0);
+    	double angle = gyro.getAngle(); // get current heading
+        OI.drive.arcadeDrive(-1.0, -angle*Kp); // drive towards heading 0
+        Timer.delay(0.004);
     }
 
     // Make this return true when this Command no longer needs to run execute()
