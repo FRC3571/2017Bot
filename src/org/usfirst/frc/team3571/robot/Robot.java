@@ -32,6 +32,9 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Default Auto", new DefaultAuto());
 		chooser.addObject("My Auto", new MyAuto());
 		SmartDashboard.putData("Auto choices", chooser);
+		
+		
+		
 	}
 
 	/**
@@ -49,6 +52,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
+		
 	}
 
 	/**
