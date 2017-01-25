@@ -4,6 +4,7 @@ import org.usfirst.frc.team3571.robot.utilities.*;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 
@@ -21,7 +22,7 @@ public class OI extends RobotMap {
 	
 	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.EXAMPLE_ANALOG);
 	
-	public static final Gyro gyro = new AnalogGyro(Analog.GYRO);
+	public static final Gyro gyro = new ADXRS450_Gyro();
 	/**
 	 * Calls All Refresh Methods
 	 */
