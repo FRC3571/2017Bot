@@ -39,6 +39,13 @@ public class Teleop extends OI {
 
 		// Flips the state of triggerDrive when Button B changes state to
 		// pressed
+		boolean test = false;
+
+		
+		if(driver.Buttons.A.changedDown){
+			test = !test;
+	    }
+		
 		if (triggerSwitchButton.changedDown) {
 			triggerDrive = !triggerDrive;
 		}
