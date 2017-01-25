@@ -1,7 +1,6 @@
 package org.usfirst.frc.team3571.robot;
-import edu.wpi.first.wpilibj.vision.VisionRunner;
 import edu.wpi.first.wpilibj.vision.VisionThread;
-import edu.wpi.cscore.UsbCamera;
+import edu.wpi.cscore.AxisCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import org.opencv.core.Rect;
 import org.opencv.imgproc.Imgproc;
@@ -15,8 +14,8 @@ public class CameraModule {
 	
 	private final Object imgLock = new Object();
 	
-	public void robotInit() {
-	    UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+	public void init() {
+	    AxisCamera camera = CameraServer.getInstance().addAxisCamera("10.35.71.101");
 	    camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 	    
 	    visionThread = new VisionThread(camera, new GripPipeline(), pipeline -> {
