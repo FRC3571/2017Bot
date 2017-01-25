@@ -7,7 +7,7 @@ import org.opencv.imgproc.Imgproc;
 public class CameraModule {
 	private static final int IMG_WIDTH = 320;
 	private static final int IMG_HEIGHT = 240;
-	public static double turn = 0;
+	public double turn = 0;
 	
 	private VisionThread visionThread;
 	private double centerX = 0.0;
