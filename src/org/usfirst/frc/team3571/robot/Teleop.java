@@ -33,7 +33,7 @@ public class Teleop extends OI {
 	public static void init() {
 		// TODO Make Teleop Init
 	}
-
+	public static boolean test = false;
 	/**
 	 * Runs at a maximum rate of 50Hz during Teleop
 	 */
@@ -42,17 +42,18 @@ public class Teleop extends OI {
 		volts = proximityAnalog.getVoltage();
 		SmartDashboard.putNumber("Volltage", volts);
 		SmartDashboard.putNumber("Distance in mm", distance);
+		SmartDashboard.putBoolean("Status", test );
 		// TODO Make Teleop Code
 
 		// Flips the state of triggerDrive when Button B changes state to
 		// pressed
-		boolean test = false;
+		
 
 		
 		if(driver.Buttons.A.changedDown){
-			test = !test;
-			SmartDashboard.putBoolean("Status", test);
-			drive.arcadeDrive(-0.6, camera.turn * 0.005);
+			//test = !test;
+			//SmartDashboard.putBoolean("Status", test);
+			
 	    }
 		
 		if (triggerSwitchButton.changedDown) {

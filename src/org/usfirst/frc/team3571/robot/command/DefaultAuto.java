@@ -1,16 +1,18 @@
 package org.usfirst.frc.team3571.robot.command;
 
+import org.usfirst.frc.team3571.robot.CameraModule;
 import org.usfirst.frc.team3571.robot.OI;
 import org.usfirst.frc.team3571.robot.Teleop;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
  *
  */
 public class DefaultAuto extends Command {
-
+	static CameraModule camera = new CameraModule();
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -25,10 +27,11 @@ public class DefaultAuto extends Command {
     	//
     
 	    double distance = Teleop.getDistance();
-		if (distance >= 500 ){
-			OI.drive.arcadeDrive(1,0);
-		}
-		
+		//if (distance >= 500 ){
+			//OI.drive.arcadeDrive(1,0);
+	//	}
+	    OI.drive.arcadeDrive(-0.6,0);// camera.turn * 0.005);
+		SmartDashboard.putNumber("angle", camera.turn *0.005);
     }
 
     // Make this return true when this Command no longer needs to run execute()
