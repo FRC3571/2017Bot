@@ -4,6 +4,7 @@ import org.usfirst.frc.team3571.robot.CameraModule;
 import org.usfirst.frc.team3571.robot.OI;
 import org.usfirst.frc.team3571.robot.Teleop;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -34,7 +35,8 @@ public class DefaultAuto extends Command {
 	    if (Teleop.test = true){
 	    	
 	    	if( camera.turn*0.005 != 0){
-	    	 OI.drive.arcadeDrive(-.2,camera.turn*0.005);// camera.turn * 0.005);
+	    	Timer.delay(0.004);
+	    	 OI.drive.arcadeDrive(-.01,-camera.turn*0.005);// camera.turn * 0.005);
 	 		
 	    	}
 	   
