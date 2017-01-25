@@ -2,6 +2,9 @@ package org.usfirst.frc.team3571.robot;
 
 import org.usfirst.frc.team3571.robot.utilities.XboxController.Button;
 
+
+
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Teleop extends OI {
@@ -17,7 +20,7 @@ public class Teleop extends OI {
 	// Holds the current drive value
 	// which is invalid if the driver is holding button B
 	static double driveY = 0;
-	
+	 
 	static double volts =0;
 	static double distance =0;
 	/**
@@ -45,6 +48,7 @@ public class Teleop extends OI {
 		if(driver.Buttons.A.changedDown){
 			test = !test;
 			SmartDashboard.putBoolean("Status", test);
+			drive.arcadeDrive(-0.6, CameraModule.turn * 0.005);
 	    }
 		
 		if (triggerSwitchButton.changedDown) {
