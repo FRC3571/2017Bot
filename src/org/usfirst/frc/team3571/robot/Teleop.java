@@ -11,8 +11,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Teleop extends OI {
 
-	
-	static CameraModule camera = new CameraModule();
 	// Only a reference is being passed
 	// therefore the button keeps on functioning
 	static Button driveStopButton = driver.Buttons.B;

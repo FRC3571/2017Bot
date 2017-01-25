@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class DefaultAuto extends Command {
-	static CameraModule camera = new CameraModule();
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -33,13 +32,13 @@ public class DefaultAuto extends Command {
 	//	}
 	    if (Teleop.test = true){
 	    	
-	    	if( camera.turn*0.005 != 0){
-	    	 OI.drive.arcadeDrive(-.2,camera.turn*0.005);// camera.turn * 0.005);
+	    	if( OI.camera.turn*0.005 != 0){
+	    	 OI.drive.arcadeDrive(-.2,OI.camera.turn*0.005);// camera.turn * 0.005);
 	 		
 	    	}
 	   
 	    }
-	    SmartDashboard.putNumber("angle", camera.turn *0.005);
+	    SmartDashboard.putNumber("angle", OI.camera.turn *0.005);
     }
 
     // Make this return true when this Command no longer needs to run execute()
