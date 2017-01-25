@@ -57,7 +57,7 @@ public class RobotMap {
 		public static final int EXAMPLE_ANALOG = 0;
 	}
 	public static class IP{
-		public static final String CAMERA = "10.35.71.101";
+		public static final String CAMERA = "10.35.71.11";
 	}
 }
 
