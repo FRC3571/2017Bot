@@ -26,12 +26,20 @@ public class DefaultAuto extends Command {
     protected void execute() {        
     	//
     
-	    double distance = Teleop.getDistance();
+	    //double distance = Teleop.getDistance();
 		//if (distance >= 500 ){
 			//OI.drive.arcadeDrive(1,0);
+	    SmartDashboard.putBoolean("Checker", Teleop.test);
 	//	}
-	    OI.drive.arcadeDrive(-0.6,0);// camera.turn * 0.005);
-		SmartDashboard.putNumber("angle", camera.turn *0.005);
+	    if (Teleop.test = true){
+	    	
+	    	if( camera.turn*0.005 != 0){
+	    	 OI.drive.arcadeDrive(-.2,camera.turn*0.005);// camera.turn * 0.005);
+	 		
+	    	}
+	   
+	    }
+	    SmartDashboard.putNumber("angle", camera.turn *0.005);
     }
 
     // Make this return true when this Command no longer needs to run execute()
