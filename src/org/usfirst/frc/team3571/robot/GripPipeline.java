@@ -1,3 +1,5 @@
+package org.usfirst.frc.team3571.robot;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
