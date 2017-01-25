@@ -1,10 +1,13 @@
 package org.usfirst.frc.team3571.robot.command;
 
 
+import java.text.DecimalFormat;
+
 import org.usfirst.frc.team3571.robot.OI;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.Gyro;
 
 
@@ -27,12 +30,14 @@ public class DefaultAuto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {        
-    	//OI.drive.arcadeDrive(-0.1,0.1);
-    	//Timer.delay(2.0);
-    	//OI.drive.arcadeDrive(0,0);
     	double angle = OI.gyro.getAngle(); // get current heading
-        OI.drive.arcadeDrive(0, -angle*Kp); // drive towards heading 0
-        Timer.delay(0.004);
+        //OI.drive.arcadeDrive(-.4, -angle*Kp); // drive towards heading 0
+        //Timer.delay(0.004);
+             double numb = -angle*Kp*1000;
+        SmartDashboard.putNumber("value", numb);
+        SmartDashboard.putNumber("RawValue", OI.gyro.getAngle());
+        SmartDashboard.putNumber("Angle", angle);
+       
     }
 
     // Make this return true when this Command no longer needs to run execute()
