@@ -7,8 +7,12 @@ import org.usfirst.frc.team3571.robot.utilities.XboxController.Button;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+
+
 public class Teleop extends OI {
 
+	
+	static CameraModule camera = new CameraModule();
 	// Only a reference is being passed
 	// therefore the button keeps on functioning
 	static Button driveStopButton = driver.Buttons.B;
@@ -48,7 +52,7 @@ public class Teleop extends OI {
 		if(driver.Buttons.A.changedDown){
 			test = !test;
 			SmartDashboard.putBoolean("Status", test);
-			drive.arcadeDrive(-0.6, CameraModule.turn * 0.005);
+			drive.arcadeDrive(-0.6, camera.turn * 0.005);
 	    }
 		
 		if (triggerSwitchButton.changedDown) {

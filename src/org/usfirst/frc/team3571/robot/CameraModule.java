@@ -14,7 +14,7 @@ public class CameraModule {
 	
 	private final Object imgLock = new Object();
 	
-	public void init() {
+	public CameraModule() {
 	    AxisCamera camera = CameraServer.getInstance().addAxisCamera(RobotMap.IP.CAMERA);
 	    camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 	    
