@@ -1,6 +1,5 @@
 
 package org.usfirst.frc.team3571.robot;
-import edu.wpi.first.wpilibj.CameraServer;
 import org.usfirst.frc.team3571.robot.command.DefaultAuto;
 import org.usfirst.frc.team3571.robot.command.MyAuto;
 
@@ -9,15 +8,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-/**
- * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the IterativeRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the manifest file in the resource
- * directory.
- */
-import edu.wpi.cscore.UsbCamera;
 public class Robot extends IterativeRobot {
 	SendableChooser<Command> chooser;
 	Command auto;
@@ -32,7 +22,6 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Default Auto", new DefaultAuto());
 		chooser.addObject("My Auto", new MyAuto());
 		SmartDashboard.putData("Auto choices", chooser);
-		UsbCamera AxisCamera = CameraServer.getInstance().startAutomaticCapture();
 		
 	}
 

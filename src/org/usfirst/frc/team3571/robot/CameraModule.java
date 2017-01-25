@@ -15,7 +15,7 @@ public class CameraModule {
 	private final Object imgLock = new Object();
 	
 	public void init() {
-	    AxisCamera camera = CameraServer.getInstance().addAxisCamera("10.35.71.101");
+	    AxisCamera camera = CameraServer.getInstance().addAxisCamera(RobotMap.IP.CAMERA);
 	    camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 	    
 	    visionThread = new VisionThread(camera, new GripPipeline(), pipeline -> {
