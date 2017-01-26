@@ -18,30 +18,19 @@ public class DefaultAuto extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
-
     // Called just before this Command runs the first time
     protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {        
-    	//
-    
-	    //double distance = Teleop.getDistance();
-		//if (distance >= 500 ){
-			//OI.drive.arcadeDrive(1,0);
 	    SmartDashboard.putBoolean("Checker", Teleop.test);
-	//	}
 	    if (Teleop.test = true){
-	    	
 	    	if( camera.turn*0.005 != 0){
-	    	Timer.delay(0.004);
-	    	 OI.drive.arcadeDrive(-.01,-camera.turn*0.005);// camera.turn * 0.005);
-	 		
+	    	Timer.delay(0.04);
+	    	 OI.drive.arcadeDrive(-.01,-camera.turn*0.005);
 	    	}
-	   
-	    }
-	    SmartDashboard.putNumber("angle", camera.turn *0.005);
+	   	} 	   SmartDashboard.putNumber("angle", camera.turn *0.005);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -18,6 +18,9 @@ public class OI extends RobotMap {
 			PWM.FRONT_RIGHT_DRIVE_MOTOR, PWM.REAR_RIGHT_DRIVE_MOTOR);
 	
 	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.EXAMPLE_ANALOG);
+	
+	public static final CameraModule camera = new CameraModule();
+	
 	/**
 	 * Calls All Refresh Methods
 	 */
