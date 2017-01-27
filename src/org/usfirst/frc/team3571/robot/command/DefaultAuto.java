@@ -31,7 +31,6 @@ public class DefaultAuto extends Command {
 	    	 OI.drive.arcadeDrive(-.01,-camera.turn*0.005);
 	    }
 	   } 
-	    	SmartDashboard.putNumber("angle", camera.turn *0.005);
     }
 
     // Make this return true when this Command no longer needs to run execute()
