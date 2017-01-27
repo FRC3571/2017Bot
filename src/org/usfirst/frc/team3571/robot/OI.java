@@ -19,7 +19,7 @@ public class OI extends RobotMap {
 	
 	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.EXAMPLE_ANALOG);
 	
-	public static final CameraModule camera = new CameraModule();
+	//public static final CameraModule camera = new CameraModule();
 	
 	/**
 	 * Calls All Refresh Methods
