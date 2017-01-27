@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.templates.Gyro;
  */
 public class DefaultAuto extends Command {
 
-	public double Kp = 0.003;
+	public double Kp = 0.006;
 	
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
@@ -31,12 +31,19 @@ public class DefaultAuto extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {        
     	double angle = OI.gyro.getAngle(); // get current heading
-        //OI.drive.arcadeDrive(-.4, -angle*Kp); // drive towards heading 0
-        //Timer.delay(0.004);
+        if (angle > -3 & angle < 3){
+        OI.drive.arcadeDrive(0, 0); // drive towards heading 0
+        Timer.delay(0.004);
+        }
+        else{
+        OI.drive.arcadeDrive(-.4, -angle*Kp); // drive towards heading 0
+        Timer.delay(0.004);
+        }
              double numb = -angle*Kp*1000;
         SmartDashboard.putNumber("value", numb);
         SmartDashboard.putNumber("RawValue", OI.gyro.getAngle());
         SmartDashboard.putNumber("Angle", angle);
+        
        
     }
 
