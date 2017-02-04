@@ -31,20 +31,21 @@ public class DefaultAuto extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {        
     	double angle = OI.gyro.getAngle(); // get current heading
-        if (angle > -3 & angle < 3){
+        if (angle > -5 & angle < 5){
         OI.drive.arcadeDrive(0, 0); // drive towards heading 0
         Timer.delay(0.004);
         }
-        else{
-        OI.drive.arcadeDrive(-.4, -angle*Kp); // drive towards heading 0
+        else if(angle >= 5){
+        	OI.drive.arcadeDrive(0.02, 0.50); // drive towards heading 0
         Timer.delay(0.004);
         }
-             double numb = -angle*Kp*1000;
+        else {
+            OI.drive.arcadeDrive(0.02, -0.50); // drive towards heading 0
+            Timer.delay(0.004);
+            }     double numb = -angle*Kp*1000;
         SmartDashboard.putNumber("value", numb);
         SmartDashboard.putNumber("RawValue", OI.gyro.getAngle());
         SmartDashboard.putNumber("Angle", angle);
-        
-       
     }
 
     // Make this return true when this Command no longer needs to run execute()
