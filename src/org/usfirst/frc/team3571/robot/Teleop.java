@@ -50,8 +50,30 @@ public class Teleop extends OI {
 		
 		if(driver.Triggers.Right > 0.9){
 		shooter.set(1);			
+		agitator.set(true);
 	    }
-		
+		else{
+		shooter.set(0);
+		agitator.set(false);
+		}		
+		if(driver.Triggers.Left > 0.9){
+			intake.set(1);
+		    }
+		else{
+			intake.set(0);
+		}
+		if (driver.Buttons.LB.changedDown){
+			climber1.set(1);
+			climber2.set(1);
+		}
+		else{
+			climber1.set(0);
+			climber2.set(0);
+		}
+		if (driver.Buttons.RB.changedDown){
+			
+		}
+		}
 		if (triggerSwitchButton.changedDown) {
 			triggerDrive = !triggerDrive;
 		}
