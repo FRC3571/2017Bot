@@ -48,10 +48,8 @@ public class Teleop extends OI {
 		
 
 		
-		if(driver.Buttons.A.changedDown){
-			//test = !test;
-			//SmartDashboard.putBoolean("Status", test);
-			
+		if(driver.Triggers.Right > 0.9){
+		shooter.set(1);			
 	    }
 		
 		if (triggerSwitchButton.changedDown) {

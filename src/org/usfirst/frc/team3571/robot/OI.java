@@ -3,6 +3,7 @@ package org.usfirst.frc.team3571.robot;
 import org.usfirst.frc.team3571.robot.utilities.*;
 
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.AnalogInput;
 
 /**
@@ -15,8 +16,8 @@ public class OI extends RobotMap {
 	public static final XboxController operator = new XboxController(DriverUSB.OPERATOR_CONTROLLER, DEFAULT.CONTROLLER_DEADZONE);
 
 	public static final RobotDrive drive = new RobotDrive(PWM.FRONT_LEFT_DRIVE_MOTOR, PWM.REAR_LEFT_DRIVE_MOTOR,
-			PWM.FRONT_RIGHT_DRIVE_MOTOR, PWM.REAR_RIGHT_DRIVE_MOTOR);
-	
+			PWM.FRONT_RIGHT_DRIVE_MOTOR,PWM.REAR_RIGHT_DRIVE_MOTOR);
+	public static Talon shooter = new Talon(PWM.SHOOTER);
 	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.EXAMPLE_ANALOG);
 	
 	

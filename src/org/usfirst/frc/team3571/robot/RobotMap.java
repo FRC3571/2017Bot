@@ -31,6 +31,7 @@ public class RobotMap {
 	 * This is everything that is connected to the Digital ports on the RoboRIO
 	 */
 	public static class Digital {
+		public static final int AGITATOR = 0;
 		// 0-9 Free
 	}
 
