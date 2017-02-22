@@ -73,7 +73,7 @@ public class Teleop extends OI {
 		if (driver.Buttons.RB.changedDown){
 			
 		}
-		}
+		
 		if (triggerSwitchButton.changedDown) {
 			triggerDrive = !triggerDrive;
 		}
