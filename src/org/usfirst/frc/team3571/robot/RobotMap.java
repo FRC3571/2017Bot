@@ -20,6 +20,7 @@ public class RobotMap {
 		public static final int INTAKE = 5;
 		public static final int FRONT_CLIMBER = 6;
 		public static final int REAR_CLIMBER = 7;
+		public static final int GEARS = 8;
 		
 		// 4-9 Free
 		// 0-9 Free
