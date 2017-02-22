@@ -16,6 +16,11 @@ public class RobotMap {
 		public static final int REAR_LEFT_DRIVE_MOTOR = 2;
 		public static final int FRONT_RIGHT_DRIVE_MOTOR = 0;
 		public static final int REAR_RIGHT_DRIVE_MOTOR = 3;
+		public static final int SHOOTER = 4;
+		public static final int INTAKE = 5;
+		public static final int FRONT_CLIMBER = 6;
+		public static final int REAR_CLIMBER = 7;
+		
 		// 4-9 Free
 		// 0-9 Free
 		//Turn error
