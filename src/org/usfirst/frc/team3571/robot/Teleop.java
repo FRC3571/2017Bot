@@ -18,7 +18,7 @@ public class Teleop extends OI {
 	// Holds value for if triggers should be used instead of LeftStick Y
 	static boolean triggerDrive = false;
 	static Button triggerSwitchButton = driver.Buttons.LeftStick;
-
+    static boolean limit;
 	// Holds the current drive value
 	// which is invalid if the driver is holding button B
 	static double driveY = 0;
@@ -37,6 +37,7 @@ public class Teleop extends OI {
 	 */
 	public static void periodic() {
 		distance = getDistance();
+		limit = OI.limit_button.get();
 		volts = proximityAnalog.getVoltage();
 		SmartDashboard.putNumber("Volltage", volts);
 		SmartDashboard.putNumber("Distance in mm", distance);
@@ -45,9 +46,13 @@ public class Teleop extends OI {
 
 		// Flips the state of triggerDrive when Button B changes state to
 		// pressed
-		
+		if (distance <= 357 && driveY > 0){
+			drive.arcadeDrive(0,0);
+		}
 
-		
+		if (limit == true && driveY > 0){
+			drive.arcadeDrive(0,0);
+		}
 		if(driver.Triggers.Right > 0.9){
 		shooter.set(-1);			
 		agitator.set(true);

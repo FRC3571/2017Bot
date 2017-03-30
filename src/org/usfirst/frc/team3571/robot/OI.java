@@ -5,6 +5,7 @@ import org.usfirst.frc.team3571.robot.utilities.*;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DigitalOutput;
 
 /**
@@ -22,9 +23,9 @@ public class OI extends RobotMap {
 	public static final Talon intake = new Talon(PWM.INTAKE);
 	public static final Talon climber1 = new Talon(PWM.FRONT_CLIMBER);
 	public static final Talon climber2 = new Talon(PWM.REAR_CLIMBER);
-	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.EXAMPLE_ANALOG);
+	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.PROXIMITY_ANALOG);
 	public static final DigitalOutput agitator = new DigitalOutput(Digital.AGITATOR);
-	
+	public static final DigitalInput limit_button = new DigitalInput(Digital.LIMIT_GEAR);
 	
 	/**
 	 * Calls All Refresh Methods

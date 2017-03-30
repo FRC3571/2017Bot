@@ -32,6 +32,7 @@ public class RobotMap {
 	 */
 	public static class Digital {
 		public static final int AGITATOR = 0;
+		public static final int LIMIT_GEAR = 0;
 		// 0-9 Free
 	}
 
@@ -61,7 +62,7 @@ public class RobotMap {
 		public static final double CONTROLLER_DEADZONE = 0.25;
 	}
 	public static class Analog{
-		public static final int EXAMPLE_ANALOG = 0;
+		public static final int PROXIMITY_ANALOG = 0;
 	}
 	public static class IP{
 		public static final String CAMERA = "10.35.71.11";
