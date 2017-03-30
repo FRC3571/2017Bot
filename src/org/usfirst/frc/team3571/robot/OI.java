@@ -7,7 +7,8 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DigitalOutput;
-
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -30,6 +31,9 @@ public class OI extends RobotMap {
 	/**
 	 * Calls All Refresh Methods
 	 */
+	
+	public static final Gyro gyro = new ADXRS450_Gyro();
+	
 	public static void refreshAll() {
 		driver.refresh();
 		operator.refresh();

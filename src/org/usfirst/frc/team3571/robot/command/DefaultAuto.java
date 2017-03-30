@@ -20,6 +20,7 @@ public class DefaultAuto extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+    	OI.gyro.reset();
     }
     //public static final CameraModule camera = new CameraModule();
     // Called repeatedly when this Command is scheduled to run
@@ -28,7 +29,7 @@ public class DefaultAuto extends Command {
 	//  if (Teleop.test = true){
 	    	//if( camera.turn*0.005 != 0){
 	   // 	Timer.delay(0.45);
-    	
+    	SmartDashboard.putNumber("Gyro", OI.gyro.getAngle());
     	i = System.currentTimeMillis();
     	while (System.currentTimeMillis() < ( i + 4000))
     	{
