@@ -49,7 +49,7 @@ public class Teleop extends OI {
 
 		
 		if(driver.Triggers.Right > 0.9){
-		shooter.set(1);			
+		shooter.set(-1);			
 		agitator.set(true);
 	    }
 		else{
@@ -88,7 +88,7 @@ public class Teleop extends OI {
 		// driveY = triggerDrive ? driver.Triggers.Combined : driver.LeftStick.Y;
 
 		if (!driveStopButton.current) {
-			drive.arcadeDrive(driveY, -driver.LeftStick.X);
+			drive.arcadeDrive(driveY, driver.LeftStick.X);
 		} else {
 			drive.stopMotor();
 		}
