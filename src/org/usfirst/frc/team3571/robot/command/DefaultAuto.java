@@ -2,13 +2,10 @@ package org.usfirst.frc.team3571.robot.command;
 
 //import org.usfirst.frc.team3571.robot.CameraModule;
 import org.usfirst.frc.team3571.robot.OI;
-import org.usfirst.frc.team3571.robot.Teleop;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import java.util.Date;
 /**
  *
  */
@@ -43,7 +40,6 @@ public class DefaultAuto extends Command {
     	}
     	OI.drive.arcadeDrive(0, 0);
     	i = System.currentTimeMillis();
-    	
     }
 	    
 	  // } 
