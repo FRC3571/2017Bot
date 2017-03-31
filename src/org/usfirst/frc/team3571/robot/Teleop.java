@@ -68,10 +68,10 @@ public class Teleop extends OI {
 			intake.set(0);
 		}
 		if (driver.Buttons.LB.changedDown){
-			climber1.set(1);
-			climber2.set(1);
+			climber1.set(-1);
+			climber2.set(-1);
 		}
-		else{
+		if (driver.Buttons.LB.changedUp){
 			climber1.set(0);
 			climber2.set(0);
 		}

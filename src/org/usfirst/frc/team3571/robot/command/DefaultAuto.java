@@ -28,18 +28,29 @@ public class DefaultAuto extends Command {
 	   // 	Timer.delay(0.45);
     	SmartDashboard.putNumber("Gyro", OI.gyro.getAngle());
     	i = System.currentTimeMillis();
-    	while (System.currentTimeMillis() < ( i + 4000))
+    	while (System.currentTimeMillis() < ( i + 1250))
     	{
-    		OI.drive.arcadeDrive(0.5, 0);
+    		OI.drive.arcadeDrive(1, 0);
     	}
     	OI.drive.arcadeDrive(0,0);
     	i = System.currentTimeMillis();
-    	while (System.currentTimeMillis() < (i + 1000))
+    	while (System.currentTimeMillis() < (i + 800))
     	{
-    		OI.drive.arcadeDrive(0, -0.5);
+    		OI.drive.arcadeDrive(0, 0.75);
     	}
     	OI.drive.arcadeDrive(0, 0);
     	i = System.currentTimeMillis();
+    	while(System.currentTimeMillis() < (i + 450))
+    	{
+    		OI.drive.arcadeDrive(0.75, 0);
+    	}
+    	OI.drive.arcadeDrive(0,0);
+    	try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 	    
 	  // } 

@@ -32,7 +32,7 @@ public class RobotMap {
 	 */
 	public static class Digital {
 		public static final int AGITATOR = 0;
-		public static final int LIMIT_GEAR = 0;
+		public static final int LIMIT_GEAR = 1;
 		// 0-9 Free
 	}
 
