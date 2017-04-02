@@ -3,12 +3,15 @@ package org.usfirst.frc.team3571.robot;
 import org.usfirst.frc.team3571.robot.command.DefaultAuto;
 import org.usfirst.frc.team3571.robot.command.MyAuto;
 
+import edu.wpi.cscore.AxisCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
+	private AxisCamera camera;
 	SendableChooser<Command> chooser;
 	Command auto;
 
@@ -18,6 +21,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		camera = CameraServer.getInstance().addAxisCamera(RobotMap.IP.CAMERA);
+		
 		chooser = new SendableChooser<Command>();
 		chooser.addDefault("Default Auto", new DefaultAuto());
 		chooser.addObject("My Auto", new MyAuto());

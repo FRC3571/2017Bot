@@ -7,8 +7,8 @@ import org.usfirst.frc.team3571.robot.utilities.XboxController.Button;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-
-
+import org.usfirst.frc.team3571.robot.CameraModule;
+import org.usfirst.frc.team3571.robot.CameraModule;
 public class Teleop extends OI {
 
 	// Only a reference is being passed
@@ -18,11 +18,11 @@ public class Teleop extends OI {
 	// Holds value for if triggers should be used instead of LeftStick Y
 	static boolean triggerDrive = false;
 	static Button triggerSwitchButton = driver.Buttons.LeftStick;
-    static boolean limit;
+    static boolean limit = true;
 	// Holds the current drive value
 	// which is invalid if the driver is holding button B
 	static double driveY = 0;
-	 
+	static double driveY2 = 0;
 	static double volts =0;
 	static double distance =0;
 	/**
@@ -46,13 +46,13 @@ public class Teleop extends OI {
 
 		// Flips the state of triggerDrive when Button B changes state to
 		// pressed
-		if (distance <= 357 && driveY > 0){
-			drive.arcadeDrive(0,0);
-		}
+		
+		
+		
 
-		if (limit == true && driveY > 0){
-			drive.arcadeDrive(0,0);
-		}
+		//if (limit == true && driveY < 0){
+			//drive.arcadeDrive(0,0);
+		//}
 		if(driver.Triggers.Right > 0.9){
 		shooter.set(-1);			
 		agitator.set(true);
@@ -68,10 +68,18 @@ public class Teleop extends OI {
 			intake.set(0);
 		}
 		if (driver.Buttons.LB.changedDown){
-			climber1.set(-1);
-			climber2.set(-1);
+			climber1.set(-.1);
+			climber2.set(-.1);
 		}
 		if (driver.Buttons.LB.changedUp){
+			climber1.set(0);
+			climber2.set(0);
+		}
+		if (driver.Buttons.RB.changedDown){
+			climber1.set(-.7);
+			climber2.set(-.7);
+		}
+		if (driver.Buttons.RB.changedUp){
 			climber1.set(0);
 			climber2.set(0);
 		}
@@ -86,16 +94,22 @@ public class Teleop extends OI {
 		// Controls which Axis controls the robot base drive
 		if (triggerDrive) {
 			driveY = driver.Triggers.Combined;
+			
 		} else {
 			driveY = driver.LeftStick.Y;
+		
 		}
+	
 		// The Above is the same as
 		// driveY = triggerDrive ? driver.Triggers.Combined : driver.LeftStick.Y;
 
 		if (!driveStopButton.current) {
-			drive.arcadeDrive(driveY, driver.LeftStick.X);
+			drive.arcadeDrive(driveY, driver.RightStick.X);
+			
 		} else {
 			drive.stopMotor();
+			
 		}
+		
 	}
 }

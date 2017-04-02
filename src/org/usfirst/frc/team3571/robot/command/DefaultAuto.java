@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3571.robot.command;
 
-//import org.usfirst.frc.team3571.robot.CameraModule;
+//
 import org.usfirst.frc.team3571.robot.OI;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -9,8 +9,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
+
 public class DefaultAuto extends Command {
 	long i = 0;
+	boolean limit = true;
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -21,11 +23,9 @@ public class DefaultAuto extends Command {
     }
     //public static final CameraModule camera = new CameraModule();
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {        
-	   // SmartDashboard.putBoolean("Checker", Teleop.test);
-	//  if (Teleop.test = true){
-	    	//if( camera.turn*0.005 != 0){
-	   // 	Timer.delay(0.45);
+    protected void execute() {    
+			/* 
+		
     	SmartDashboard.putNumber("Gyro", OI.gyro.getAngle());
     	i = System.currentTimeMillis();
     	while (System.currentTimeMillis() < ( i + 1250))
@@ -51,8 +51,42 @@ public class DefaultAuto extends Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	*/
+    	// dankdankdankdankdank
+    /*	limit = OI.limit_button.get();
+    	i = System.currentTimeMillis();
+    	if (limit == false)
+    	{
+    		OI.drive.arcadeDrive(0.3, 0);
+    	}
+    	else if (System.currentTimeMillis() < ( i + 1100) && limit == true)
+    	{
+    		limit = OI.limit_button.get();
+    		OI.drive.arcadeDrive(-1, 0); 
+    	}
+    	else if (System.currentTimeMillis() < (i + 1900) && limit == true)
+    	{
+    		limit = OI.limit_button.get();
+    		OI.drive.arcadeDrive(0, -0.75);
+    	}
+    	else if(System.currentTimeMillis() < (i + 2600) && limit == true)
+    	{
+    		limit = OI.limit_button.get();
+    		OI.drive.arcadeDrive(-0.6, 0);
+    	}
+    	OI.drive.arcadeDrive(0,0);
+    	} */
+    	if (i == 0)
+    	{
+    		i = System.currentTimeMillis();
+    	}
+    	if (System.currentTimeMillis() < (i + 5000))
+    	{
+    		OI.drive.arcadeDrive(0.75, 0);
+    	}
     }
-	    
+    
+    
 	  // } 
    //}
 
