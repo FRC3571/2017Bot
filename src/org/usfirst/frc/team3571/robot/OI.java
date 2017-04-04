@@ -27,7 +27,7 @@ public class OI extends RobotMap {
 	public static final AnalogInput proximityAnalog = new AnalogInput(Analog.PROXIMITY_ANALOG);
 	public static final DigitalOutput agitator = new DigitalOutput(Digital.AGITATOR);
 	public static final DigitalInput limit_button = new DigitalInput(Digital.LIMIT_GEAR);
-	CameraModule cameras = new CameraModule ();
+	public static final CameraModule cameras = new CameraModule ();
 	/**
 	 * Calls All Refresh Methods
 	 */

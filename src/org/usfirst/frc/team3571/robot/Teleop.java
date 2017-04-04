@@ -1,14 +1,5 @@
 package org.usfirst.frc.team3571.robot;
-import org.usfirst.frc.team3571.robot.CameraModule.*;
 import org.usfirst.frc.team3571.robot.utilities.XboxController.Button;
-
-
-
-
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc.team3571.robot.CameraModule;
-import org.usfirst.frc.team3571.robot.CameraModule;
 public class Teleop extends OI {
     
 	// Only a reference is being passed
