@@ -3,6 +3,7 @@ package org.usfirst.frc.team3571.robot.command;
 //
 import org.usfirst.frc.team3571.robot.OI;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -13,6 +14,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class DefaultAuto extends Command {
 	long i = 0;
 	boolean limit = true;
+	Timer t1 = new Timer();
+	double timeElapsed = 0;
+	
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -20,13 +24,16 @@ public class DefaultAuto extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	OI.gyro.reset();
+    	t1.reset();
+    	t1.start();
     }
     //public static final CameraModule camera = new CameraModule();
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {    
+    protected void execute() {  
+    	timeElapsed = t1.get();
 			/* 
 		
-    	SmartDashboard.putNumber("Gyro", OI.gyro.getAngle());
+    	
     	i = System.currentTimeMillis();
     	while (System.currentTimeMillis() < ( i + 1250))
     	{
@@ -52,7 +59,6 @@ public class DefaultAuto extends Command {
 			e.printStackTrace();
 		}
     	*/
-    	// dankdankdankdankdank
     /*	limit = OI.limit_button.get();
     	i = System.currentTimeMillis();
     	if (limit == false)
@@ -76,13 +82,14 @@ public class DefaultAuto extends Command {
     	}
     	OI.drive.arcadeDrive(0,0);
     	} */
-    	if (i == 0)
-    	{
-    		i = System.currentTimeMillis();
-    	}
-    	if (System.currentTimeMillis() < (i + 5000))
+    	
+    	if (timeElapsed < 5)
     	{
     		OI.drive.arcadeDrive(0.75, 0);
+    	}
+    	else 
+    	{
+    		OI.drive.arcadeDrive(0, 0);
     	}
     }
     

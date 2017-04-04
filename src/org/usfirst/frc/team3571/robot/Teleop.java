@@ -39,19 +39,14 @@ public class Teleop extends OI {
 		distance = getDistance();
 		limit = OI.limit_button.get();
 		volts = proximityAnalog.getVoltage();
-		SmartDashboard.putNumber("Volltage", volts);
-		SmartDashboard.putNumber("Distance in mm", distance);
-		SmartDashboard.putBoolean("Status", test );
+		
 		// TODO Make Teleop Code
 
 		// Flips the state of triggerDrive when Button B changes state to
 		// pressed
 		
-		
-		
-
 		//if (limit == true && driveY < 0){
-			//drive.arcadeDrive(0,0);
+		//drive.arcadeDrive(0,0);
 		//}
 		if(driver.Triggers.Right > 0.9){
 		shooter.set(-1);			
@@ -83,9 +78,6 @@ public class Teleop extends OI {
 			climber1.set(0);
 			climber2.set(0);
 		}
-		if (driver.Buttons.RB.changedDown){
-			
-		}
 		
 		if (triggerSwitchButton.changedDown) {
 			triggerDrive = !triggerDrive;
@@ -94,7 +86,6 @@ public class Teleop extends OI {
 		// Controls which Axis controls the robot base drive
 		if (triggerDrive) {
 			driveY = driver.Triggers.Combined;
-			
 		} else {
 			driveY = driver.LeftStick.Y;
 		
