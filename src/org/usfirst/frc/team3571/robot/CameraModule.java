@@ -10,7 +10,8 @@ public class CameraModule {
 	public double turn = 0;
 	
 	private VisionThread visionThread;
-	private double centerX = 0.0;
+	private double centerXr = 0.0;
+	private double centerXq = 0.0;
 	
 	private final Object imgLock = new Object();
 	
@@ -20,13 +21,14 @@ public class CameraModule {
 	    
 	    visionThread = new VisionThread(camera, new GripPipeline(), pipeline -> {
 	        if (!pipeline.filterContoursOutput().isEmpty()) {
-	        	Teleop.test = !true;
 	            Rect r = Imgproc.boundingRect(pipeline.filterContoursOutput().get(0));
+	            Rect q = Imgproc.boundingRect(pipeline.filterContoursOutput().get(1));
 	            synchronized (imgLock) {
-	                centerX = r.x + (r.width / 2);
+	                centerXr = r.x + (r.width / 2);
+	                centerXq = q.x + (q.width / 2);
 	            }
 	        }
-	       turn = centerX - (IMG_WIDTH / 2);
+	       turn = (centerXr+centerXq)/2 - (IMG_WIDTH / 2);
 	    
 	    });
 	    visionThread.start();
