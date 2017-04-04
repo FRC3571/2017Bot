@@ -17,7 +17,7 @@ public class Teleop extends OI {
 	static double volts =0;
 	static double distance =0;
 	static boolean gear = false;
-	
+	static double turner;
 	/**
 	 * The initialization code for Teleop
 	 */
@@ -87,8 +87,9 @@ public class Teleop extends OI {
 		if (driver.Buttons.X.changedDown){
 			gear=!gear;
 		}
+		turner = OI.cameras.turn;
 		if (gear =true && distance < 150){
-			    drive.arcadeDrive(0.3, CameraModule.turn);
+			    drive.arcadeDrive(0.3,turner );
 			}
 			else{
 				 drive.arcadeDrive(0, 0);
