@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
-	private AxisCamera camera;
+	//private AxisCamera camera;
 	SendableChooser<Command> chooser;
 	Command auto;
 
@@ -21,7 +21,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		camera = CameraServer.getInstance().addAxisCamera(RobotMap.IP.CAMERA);
+		//camera = CameraServer.getInstance().addAxisCamera(RobotMap.IP.CAMERA);
 		
 		chooser = new SendableChooser<Command>();
 		chooser.addDefault("Default Auto", new DefaultAuto());

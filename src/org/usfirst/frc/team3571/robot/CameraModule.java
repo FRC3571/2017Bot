@@ -25,10 +25,13 @@ public class CameraModule {
 	            Rect q = Imgproc.boundingRect(pipeline.filterContoursOutput().get(1));
 	            synchronized (imgLock) {
 	                centerXr = r.x + (r.width / 2);
-	                centerXq = q.x + (q.width / 2);
+	                centerXq = q.x - (q.width / 2);
+	                turn = (centerXr+centerXq)/2 - (IMG_WIDTH / 2);
+	               
 	            }
+	           
 	        }
-	       turn = (centerXr+centerXq)/2 - (IMG_WIDTH / 2);
+	       
 	    
 	    });
 	    visionThread.start();

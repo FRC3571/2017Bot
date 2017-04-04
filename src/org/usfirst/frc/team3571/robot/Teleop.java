@@ -1,5 +1,5 @@
 package org.usfirst.frc.team3571.robot;
-
+import org.usfirst.frc.team3571.robot.CameraModule.*;
 import org.usfirst.frc.team3571.robot.utilities.XboxController.Button;
 
 
@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3571.robot.CameraModule;
 import org.usfirst.frc.team3571.robot.CameraModule;
 public class Teleop extends OI {
-
+    
 	// Only a reference is being passed
 	// therefore the button keeps on functioning
 	static Button driveStopButton = driver.Buttons.B;
@@ -25,11 +25,13 @@ public class Teleop extends OI {
 	static double driveY2 = 0;
 	static double volts =0;
 	static double distance =0;
+	
 	/**
 	 * The initialization code for Teleop
 	 */
 	public static void init() {
 		// TODO Make Teleop Init
+		
 	}
 	public static boolean test = false;
 	/**
@@ -90,7 +92,11 @@ public class Teleop extends OI {
 			driveY = driver.LeftStick.Y;
 		
 		}
-	
+		if (driver.Buttons.X.changedDown){
+			while (distance < 150){
+				//drive.arcadeDrive(0, CameraModule.turn);
+			}
+		}
 		// The Above is the same as
 		// driveY = triggerDrive ? driver.Triggers.Combined : driver.LeftStick.Y;
 
