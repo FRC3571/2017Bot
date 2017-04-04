@@ -85,8 +85,9 @@ public class Teleop extends OI {
 		}
 		if (driver.Buttons.X.changedDown){
 			while (distance < 150){
-				//drive.arcadeDrive(0, CameraModule.turn);
+		    drive.arcadeDrive(0.3, CameraModule.turn);
 			}
+			 drive.arcadeDrive(0, 0);
 		}
 		// The Above is the same as
 		// driveY = triggerDrive ? driver.Triggers.Combined : driver.LeftStick.Y;
