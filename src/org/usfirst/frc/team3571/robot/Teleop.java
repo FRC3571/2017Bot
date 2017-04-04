@@ -87,7 +87,7 @@ public class Teleop extends OI {
 		if (driver.Buttons.X.changedDown){
 			gear=!gear;
 		}
-		turner = OI.cameras.turn;
+		turner = OI.cameras.turn * 0.006;
 		if (gear =true && distance < 150){
 			    drive.arcadeDrive(0.3,turner );
 			}
