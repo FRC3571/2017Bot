@@ -16,7 +16,7 @@ public class Teleop extends OI {
 	static double driveY2 = 0;
 	static double volts =0;
 	static double distance =0;
-	static boolean a = false;
+	static boolean gear = false;
 	
 	/**
 	 * The initialization code for Teleop
@@ -85,14 +85,14 @@ public class Teleop extends OI {
 		
 		}
 		if (driver.Buttons.X.changedDown){
-			a=!a;
+			gear=!gear;
 		}
-		if (a =true && distance < 150){
+		if (gear =true && distance < 150){
 			    drive.arcadeDrive(0.3, CameraModule.turn);
 			}
 			else{
 				 drive.arcadeDrive(0, 0);
-				 a = false;
+				 gear = false;
 		}
 		// The Above is the same as
 		// driveY = triggerDrive ? driver.Triggers.Combined : driver.LeftStick.Y;
