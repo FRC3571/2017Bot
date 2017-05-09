@@ -29,12 +29,17 @@ public class CenterStart extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	timeElapsed = t1.get();
-    	if (timeElapsed < 4){
-    		OI.drive.arcadeDrive(0.5, 0);
+    	if (timeElapsed < 5){
+    		OI.drive.arcadeDrive(0.57, 0);
+    	}
+    	else if (timeElapsed < 5.3){
+    		OI.drive.arcadeDrive(-0.3, 0);
     	}
     	else {
     		OI.drive.arcadeDrive(0,0);
     	}
+    	
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

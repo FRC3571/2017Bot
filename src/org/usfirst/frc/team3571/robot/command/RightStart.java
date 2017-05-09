@@ -30,14 +30,13 @@ public class RightStart extends Command {
     protected void execute() {
     	timeElapsed = t1.get();
     	if (timeElapsed < 4){
-    		OI.drive.arcadeDrive(0.5, 0);
+    		OI.drive.arcadeDrive(0.65, 0);
     	}
-    	else if (timeElapsed < 6)
-    	{
+    	else if (timeElapsed < 6){
     		OI.drive.arcadeDrive(0, -0.5);
     	}
-    	else if (timeElapsed < 9){
-    		OI.drive.arcadeDrive(0.5,0);
+    	else if (timeElapsed < 8){
+    		OI.drive.arcadeDrive(0.6, 0);
     	}
     	else {
     		OI.drive.arcadeDrive(0,0);

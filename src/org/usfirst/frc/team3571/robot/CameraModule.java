@@ -1,4 +1,5 @@
 package org.usfirst.frc.team3571.robot;
+
 import edu.wpi.first.wpilibj.vision.VisionThread;
 import edu.wpi.cscore.AxisCamera;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -26,8 +27,8 @@ public class CameraModule {
 	            synchronized (imgLock) {
 	                centerXr = r.x + (r.width / 2);
 	                centerXq = q.x - (q.width / 2);
-	                turn = (centerXr+centerXq)/2 - (IMG_WIDTH / 2);
-	               
+	                turn = ((centerXr+centerXq)/2 - (IMG_WIDTH / 2))+((Math.atan(8/14.5))/(40*Math.PI/180)*IMG_WIDTH);
+	           
 	            }
 	           
 	        }

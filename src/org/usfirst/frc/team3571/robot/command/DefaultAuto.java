@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 
 public class DefaultAuto extends Command {
-	long i = 0;
+/*	long i = 0;
 	boolean limit = true;
 	Timer t1 = new Timer();
 	double timeElapsed = 0;
@@ -58,8 +58,8 @@ public class DefaultAuto extends Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	*/
-    /*	limit = OI.limit_button.get();
+    	
+    	limit = OI.limit_button.get();
     	i = System.currentTimeMillis();
     	if (limit == false)
     	{
@@ -81,7 +81,7 @@ public class DefaultAuto extends Command {
     		OI.drive.arcadeDrive(-0.6, 0);
     	}
     	OI.drive.arcadeDrive(0,0);
-    	} */
+    	} 
     	
     	if (timeElapsed < 5)
     	{
@@ -92,7 +92,7 @@ public class DefaultAuto extends Command {
     		OI.drive.arcadeDrive(0, 0);
     	}
     }
-    
+    */
     
 	  // } 
    //}
