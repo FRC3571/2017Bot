@@ -25,13 +25,20 @@ public class MyAuto extends Command {
     protected void execute() {  
     timeElapsed = zayd.get();
     if (timeElapsed < 3){
-    	OI.drive.arcadeDrive(0.75, 0);
+    	OI.drive.arcadeDrive(0.75,0);
+    }
+    
+    else if (timeElapsed < 6){
+    	OI.drive.arcadeDrive(0.75,1);
+    }
+    
+    else if (timeElapsed < 9){
+    	OI.drive.arcadeDrive(0.75,-1);
     }
     
     else {
-    	OI.drive.arcadeDrive(0, 0);
+    	OI.drive.arcadeDrive(0,0);
     }
-
 }
     protected boolean isFinished() {
         return false;
