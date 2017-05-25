@@ -24,13 +24,6 @@ public class DefaultAuto extends Command {
     protected void execute() {        
     	//
     
-    double distance = Teleop.getDistance();
-		double volts = Teleop.proximityAnalog.getVoltage();
-		if (distance >= 500 ){
-		
-		OI.drive.arcadeDrive(1,0);
-		}
-		
     }
 
     // Make this return true when this Command no longer needs to run execute()
