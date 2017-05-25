@@ -23,7 +23,7 @@ public class DefaultAuto extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Tushar.reset();
-    	Tushar:start();
+    	Tushar.start();
     }
     //public static final CameraModule camera = new CameraModule();
     // Called repeatedly when this Command is scheduled to run
