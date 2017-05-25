@@ -32,6 +32,9 @@ public class MyAuto extends Command {
     	if (timeElapsed < 3){
     		OI.drive.arcadeDrive(0.75,0);
     	}
+    	else if (timeElapsed < 5){
+    		OI.drive.arcadeDrive(0.75,0.5);
+    	}
     	else {
     		OI.drive.arcadeDrive(0,0);
     	}
