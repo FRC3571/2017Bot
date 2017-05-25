@@ -29,14 +29,18 @@ public class DefaultAuto extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {  
     	TimeElapsed = Tushar.get();
-    	if (TimeElapsed < 3){
-    		OI.drive.arcadeDrive(1.25,0);
+    	if (TimeElapsed < 2){
+    		OI.drive.arcadeDrive(.65,0);
     	}
-    	
+    	else if (TimeElapsed < 4) {
+    		OI.drive.arcadeDrive(-0.85,0);
+    	}
+    	else if (TimeElapsed < 8) {
+    		OI.drive.arcadeDrive(0,1);
+    }
     	else {
-    		OI.drive.arcadeDrive(-1.25,0);
+    		OI.drive.arcadeDrive(0,0);
     	}
-    	
    }
 
     // Make this return true when this Command no longer needs to run execute()
