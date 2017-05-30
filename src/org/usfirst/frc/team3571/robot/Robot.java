@@ -4,6 +4,8 @@ import org.usfirst.frc.team3571.robot.command.DefaultAuto;
 import org.usfirst.frc.team3571.robot.command.LeftStart;
 import org.usfirst.frc.team3571.robot.command.RightStart;
 import org.usfirst.frc.team3571.robot.command.CenterStart;
+import org.usfirst.frc.team3571.robot.command.MyAuto;
+import org.usfirst.frc.team3571.robot.command.GyroTest;
 
 import edu.wpi.cscore.AxisCamera;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -26,10 +28,11 @@ public class Robot extends IterativeRobot {
 		camera = CameraServer.getInstance().addAxisCamera(RobotMap.IP.CAMERA);
 		
 		chooser = new SendableChooser<Command>();
-		chooser.addDefault("Default Auto", new DefaultAuto());
+		chooser.addDefault("MyAuto", new MyAuto());
 		chooser.addObject("Left Start", new LeftStart());
 		chooser.addObject("Right Start", new RightStart());
 		chooser.addObject("Center Start", new CenterStart());
+		chooser.addObject("GyroTest", new GyroTest());
 		SmartDashboard.putData("Auto choices", chooser);
 		
 	}
