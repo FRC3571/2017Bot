@@ -16,6 +16,7 @@ public class DefaultAuto extends Command {
 	boolean limit = true;
 	Timer t1 = new Timer();
 	double timeElapsed = 0;
+	double angle;
 	
     public DefaultAuto() {
         // Use requires() here to declare subsystem dependencies
@@ -30,6 +31,9 @@ public class DefaultAuto extends Command {
     //public static final CameraModule camera = new CameraModule();
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	angle = OI.gyro.getAngle();
+    	
+    	SmartDashboard.putNumber("Angle", angle);
     	
     	timeElapsed = t1.get();
     	if (timeElapsed < 2){
