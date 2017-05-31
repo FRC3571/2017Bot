@@ -24,8 +24,12 @@ public class MyAuto extends Command {
    
     protected void execute() {  
     timeElapsed = zayd.get();
-    if (timeElapsed < 6.5){
+    if (timeElapsed < 5.46808511){
     	OI.drive.arcadeDrive(0.75,0);
+    }
+    
+    else if (timeElapsed < 10.93617022){
+    	OI.drive.arcadeDrive(-0.75,0);
     }
     
     else {
