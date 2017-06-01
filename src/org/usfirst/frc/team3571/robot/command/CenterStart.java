@@ -38,8 +38,6 @@ public class CenterStart extends Command {
     	else {
     		OI.drive.arcadeDrive(0,0);
     	}
-    	
-    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

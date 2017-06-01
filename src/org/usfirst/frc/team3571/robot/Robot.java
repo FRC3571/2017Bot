@@ -32,6 +32,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("Left Start", new LeftStart());
 		chooser.addObject("Right Start", new RightStart());
 		chooser.addObject("Center Start", new CenterStart());
+		chooser.addObject("Default Auto", new DefaultAuto());
 		chooser.addObject("GyroTest", new GyroTest());
 		SmartDashboard.putData("Auto choices", chooser);
 		
