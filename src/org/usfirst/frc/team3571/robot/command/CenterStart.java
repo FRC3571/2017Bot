@@ -5,8 +5,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team3571.robot.OI;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *

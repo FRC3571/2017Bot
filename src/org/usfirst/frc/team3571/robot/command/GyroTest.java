@@ -6,7 +6,6 @@ import org.usfirst.frc.team3571.robot.OI;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 
 /**

@@ -122,7 +122,7 @@ public class Teleop extends OI {
 		driveY = triggerDrive ? driver.Triggers.Combined : driver.LeftStick.Y;
 
 		if (!driveStopButton.current) {
-			drive.arcadeDrive(driveY*a, driver.RightStick.X*b);
+			drive.arcadeDrive(-driveY*a, driver.LeftStick.X*b);
 			
 		} else {
 			drive.stopMotor();
