@@ -28,7 +28,7 @@ public class DefaultAuto extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {  
      timeElapsed = jaz.get();
-     if (timeElapsed < 5){
+     if (timeElapsed < 10){
     	 OI.drive.arcadeDrive(0.75,0);
     	 }
 
