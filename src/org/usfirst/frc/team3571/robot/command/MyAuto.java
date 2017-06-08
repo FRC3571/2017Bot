@@ -29,10 +29,10 @@ public class MyAuto extends Command {
     protected void execute() {
     	timeElapsed = jaz.get();
     
-    	if (timeElapsed < 2){
+    	if (timeElapsed < 3){
     		OI.drive.arcadeDrive(0.50,0);
     	}
-    	else if (timeElapsed < 3){
+    	else if (timeElapsed < 4){
     		OI.drive.arcadeDrive(0,0);
     	}
     }
