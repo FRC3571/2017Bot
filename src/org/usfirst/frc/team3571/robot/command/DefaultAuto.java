@@ -32,7 +32,9 @@ public class DefaultAuto extends Command {
     	if (TimeElapsed < 10){
     		OI.drive.arcadeDrive(1,0);
     	}
-    
+    	else{
+    	OI.drive.arcadeDrive (0,0);
+    	}
     
     	
    }
